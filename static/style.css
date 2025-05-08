@@ -1,0 +1,64 @@
+/* coolor palette: https://coolors.co/palette/780000-c1121f-fdf0d5-003049-669bbc */
+
+body {
+    font-family: Arial, sans-serif;
+    color: #fdf0d5;
+    background-color: #003049;
+    padding: 2em;
+  }
+  
+h1 {
+    text-align: center;
+}
+
+.form-group {
+    text-align: center;
+}
+
+.converted-text {
+    margin: 2em auto;          /* centers the block horizontally */
+    max-width: 60em;           /* limits line length for readability */
+    padding: 1em;
+    white-space: pre-wrap;     /* preserves line breaks */
+    font-family: monospace;    /* keeps it like code */
+}
+
+.converted-text h2 {
+    text-align: center;
+}
+
+.error-message {
+    color: #c1121f;
+    text-align: center;
+}
+
+footer
+{
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+a {
+    color: #669bbc;
+    text-decoration: none;
+}
+
+
+/* Input styles */
+
+input[type="file"] {
+    border: 1px solid #669bbc;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+input[type="submit"] {
+    background-color: #669bbc;
+    border-color: #669bbc;
+    color: #fdf0d5;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+}

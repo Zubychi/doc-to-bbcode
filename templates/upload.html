@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Doc to BBCode</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>upload a .docx file</h1>
+  <div class="form-group">
+    <form method="post" enctype="multipart/form-data">
+      <input type="file" name="file">
+      <input type="submit" value="convert">
+    </form>
+  </div>
+
+  {% if text %}
+    <hr>
+    <div class="converted-text">
+      <h2>converted text:</h2>
+      <p>{{ text }}</p>
+    </div>
+  {% endif %}
+
+  {% if error %}
+    <hr>
+    <div class="error-message">
+      <h2>error</h2>
+      <p>{{ error }}</p>
+    </div>
+  {% endif %}
+
+  <footer>
+    <p>author: Zubychi | find me on: <a target="_blank" href="https://github.com/Zubychi"><b>GitHub</b></a></p>
+  </footer>
+</body>
+</html>
