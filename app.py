@@ -50,21 +50,20 @@ def docx_to_bbcode(file):
                 text = f"[u]{text}[/u]"
             if run.font.color and run.font.color.rgb:
                 text = f"[color=#{run.font.color.rgb}]{text}[/color]"
-            if run.font.size:
-                text = f"[size={run.font.size.pt}]{text}[/size]"
-            if run.font.name:
-                text = f"[font={run.font.name}]{text}[/font]"
-            if run.font.highlight_color:
-                text = f"[highlight={run.font.highlight_color}]{text}[/highlight]"
+            # if run.font.size:
+            # works in percentages, not points
+            #     text = f"[size={run.font.size.pt}]{text}[/size]"
+            # if run.font.name:
+            #     text = f"[font={run.font.name}]{text}[/font]"
+            # if run.font.highlight_color:
+            #     text = f"[highlight={run.font.highlight_color}]{text}[/highlight]"
             if run.font.strike:
                 text = f"[strike]{text}[/strike]"
             par_out += text
 
         if par.alignment in alignments:
             stylings["align"] = alignments[par.alignment]
-        else:
-            stylings["align"] = "left"
-        par_out = f"[align={stylings['align']}]{par_out}[/align]"
+            par_out = f"[align={stylings['align']}]{par_out}[/align]"
         output += par_out + "\n"
         par_out = ""
 
