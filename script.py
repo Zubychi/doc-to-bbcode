@@ -43,21 +43,21 @@ for par in doc.paragraphs:
     for run in par.runs:
         text = run.text
         if run.bold:
-            text = f"{"[b]"}{text}{"[/b]"}"
+            text = f"[b]{text}[/b]"
         if run.italic:
-            text = f"{"[i]"}{text}{"[/i]"}"
+            text = f"[i]{text}[/i]"
         if run.underline:
-            text = f"{"[u]"}{text}{"[/u]"}"
+            text = f"[u]{text}[/u]"
         if run.font.color.rgb:
-            text = f"{"[color=#"}{run.font.color.rgb}]{text}{"[/color]"}"
+            text = f"[color='#{run.font.color.rgb}']{text}[/color]"
         if run.font.size:
-            text = f"{"[size="}{run.font.size.pt}]{text}{"[/size]"}"
+            text = f"[font size='{run.font.size.pt}pt']{text}[/size]"
         if run.font.name:
-            text = f"{"[font="}{run.font.name}]{text}{"[/font]"}"
+            text = f"[font='{run.font.name}']{text}[/font]"
         if run.font.highlight_color:
-            text = f"{"[highlight="}{run.font.highlight_color}]{text}{"[/highlight]"}"
+            text = f"[highlight='{run.font.highlight_color}']{text}[/highlight]"
         if run.font.strike:
-            text = f"{"[strike]"}{text}{"[/strike]"}"
+            text = f"[strike]{text}[/strike]"
         par_out += text
 
     if par.alignment:
@@ -65,7 +65,7 @@ for par in doc.paragraphs:
             stylings["align"] = alignments[par.alignment]
         else:
             stylings["align"] = "left"
-        par_out = f"[align={stylings["align"]}]{par_out}[/align]"
+        par_out = f"[div style='text-align: {stylings['align']}']{par_out}[/div]"
     output += par_out + "\n"
     par_out = ""
 
