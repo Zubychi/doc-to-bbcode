@@ -63,7 +63,7 @@ def docx_to_bbcode(file):
 
         if par.alignment in alignments:
             stylings["align"] = alignments[par.alignment]
-            par_out = f"[align={stylings['align']}]{par_out}[/align]"
+            par_out = f"[div style='text-align: {stylings['align']}']{par_out}[/div]"
         output += par_out + "\n"
         par_out = ""
 
